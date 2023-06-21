@@ -263,7 +263,7 @@ if __name__ == '__main__':
 ```
 ## Output :
 
-![download](https://github.com/Sandhyacharu/SmartEyes-Obstacle-Detection-System/assets/75235167/0d44252f-a44a-4a19-b1af-4577afefed0b)
+![download (1)](https://github.com/Sandhyacharu/SmartEyes-Obstacle-Detection-System/assets/75235167/d9134adb-c705-4451-a491-ce2f0f34cb0f)
 
 ## Result :
 
