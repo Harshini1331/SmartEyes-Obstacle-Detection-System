@@ -1,11 +1,11 @@
 # SmartEyes-Obstacle-Detection-System
 ## Objective :
 The objective of an obstacle detection system is to accurately detect and localize obstacles in the environment to enable safe and efficient navigation and decision-making for autonomous vehicles, pedestrians, vehicles, animals, etc.
-## Abstract :
-## Software Requirements :
-  •	Google Colab
 
-  •	YOLOv7 Detection Model 
+## Software Requirements :
+  •	Python 3.10.12
+
+  •	YOLOv7 
 
 ## Program :
 ```python3
@@ -262,12 +262,19 @@ if __name__ == '__main__':
             detect()
 ```
 ## Output :
+
 ![download](https://github.com/Sandhyacharu/SmartEyes-Obstacle-Detection-System/assets/75235167/0d44252f-a44a-4a19-b1af-4577afefed0b)
 
 ## Result :
+
+The result of this obstacle detection system is the accurate identification and localization of obstacles in the environment. This includes detecting various objects such as pedestrians, stop sign and obstacles such as bicycle, truck, or any other hazards. This system provides information about the presence, location, and characteristics of obstacles, enabling safe and efficient navigation, decision-making, or interaction for autonomous vehicles, robotics, and surveillance systems.
+
 ## Conclusion :
 
+In this obstacle detection project, we utilized the popular COCO dataset and trained a YOLOv7 model to detect obstacles in images. The YOLOv7 architecture is well-suited for object detection tasks due to its real-time performance and high accuracy.
+
 ## References :
+
 [1]    Deqiang He, Zhiheng Zou, Yanjun Chen, Bin Liu, Xiaoyang Yao, Sheng Shan,“ Obstacle detection of rail transit based on deep learning ”, Measurement, Volume 176,2021.
 
 [2]    M. I. Thariq Hussan, D. Saidulu, P. T. Anitha, A. Manikandan and P. Naresh “Object Detection and Recognition in Real Time Using Deep Learning for Visually Impaired People”,2022.
