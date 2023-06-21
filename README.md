@@ -8,6 +8,42 @@ The objective of an obstacle detection system is to accurately detect and locali
   •	YOLOv7 Detection Model 
 
 ## Program :
+```python3
+import sys
+import torch
+print(f"Python version: {sys.version}, {sys.version_info} ")
+print(f"Pytorch version: {torch.__version__} ")
+from google.colab import drive
+drive.mount('/content/gdrive')
+%cd /content/gdrive/MyDrive/yolov7
+data_location = "/content/gdrive/MyDrive/yolov7/data"
+%cat {data_location}/coco.yaml
+# define number of classes based on YAML
+import yaml
+with open(data_location + "/coco.yaml", 'r') as stream:
+    num_classes = str(yaml.safe_load(stream)['nc'])
+%cat /content/gdrive/MyDrive/yolov7/cfg/training/yolov7.yaml
+%cd /content/gdrive/MyDrive/yolov7
+!python train.py --batch 8 --cfg cfg/training/yolov7.yaml --epochs 3 --data data/coco.yaml --weights yolov7.pt
+!# Detection
+!python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source /content/car.jpg
+# define helper functions to show images
+def imShow(path):
+  import cv2
+  import matplotlib.pyplot as plt
+  %matplotlib inline
+
+  image = cv2.imread(path)
+  height, width = image.shape[:2]
+  resized_image = cv2.resize(image,(2*width, 2*height), interpolation = cv2.INTER_CUBIC)
+
+  fig = plt.gcf()
+  fig.set_size_inches(18, 10)
+  plt.axis("off")
+  plt.imshow(cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB))
+  plt.show()
+imShow("runs/detect/exp29/car.jpg")
+```
 ### Detect.py
 ```python3
 import argparse
