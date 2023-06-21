@@ -1,11 +1,11 @@
 # SmartEyes-Obstacle-Detection-System
 ## Objective :
-
+The objective of an obstacle detection system is to accurately detect and localize obstacles in the environment to enable safe and efficient navigation and decision-making for autonomous vehicles, pedestrians, vehicles, animals, etc.
 ## Abstract :
 ## Software Requirements :
-•	Google Colab
+  •	Google Colab
 
-•	YOLOv7 Detection Model 
+  •	YOLOv7 Detection Model 
 
 ## Program :
 ## Output :
