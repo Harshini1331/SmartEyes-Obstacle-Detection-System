@@ -252,6 +252,8 @@ if __name__ == '__main__':
             detect()
 ```
 ## Output :
+![download](https://github.com/Sandhyacharu/SmartEyes-Obstacle-Detection-System/assets/75235167/0d44252f-a44a-4a19-b1af-4577afefed0b)
+
 ## Result :
 ## Conclusion :
 
