@@ -51,7 +51,45 @@ def imShow(path):
   plt.imshow(cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB))
   plt.show()
   
+# Original Image
+imShow("/content/car.jpg")
+
+# Detected Image
 imShow("runs/detect/exp29/car.jpg")
+
+import imageio
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from skimage.transform import resize
+from IPython.display import HTML
+
+def display_video(video):
+    fig = plt.figure(figsize=(3,3))  #Display size specification
+
+    mov = []
+    for i in range(len(video)):  #Append videos one by one to mov
+        img = plt.imshow(video[i], animated=True)
+        plt.axis('off')
+        mov.append([img])
+
+    #Animation creation
+    anime = animation.ArtistAnimation(fig, mov, interval=50, repeat_delay=1000)
+
+    plt.close()
+    return anime
+
+  !# Detection
+!python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source /content/video.mp4
+
+# Original Video
+video = imageio.mimread('/content/video.mp4', memtest=False)  #Loading video
+video = [resize(frame, (256, 256))[..., :3] for frame in video]     #Size adjustment
+HTML(display_video(video).to_html5_video())  #Inline video display in HTML5
+
+# Detected Video
+video = imageio.mimread('/content/gdrive/MyDrive/yolov7/runs/detect/exp34/video.mp4', memtest=False)  #Loading video
+video = [resize(frame, (256, 256))[..., :3] for frame in video]     #Size adjustment
+HTML(display_video(video).to_html5_video())  #Inline video display in HTML5
 
 ```
 ### Detect.py
