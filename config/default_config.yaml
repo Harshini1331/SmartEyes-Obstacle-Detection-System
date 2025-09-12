@@ -1,0 +1,61 @@
+# SmartEyes Obstacle Detection System - Default Configuration
+
+# Model Configuration
+model:
+  config_path: "yolo/yolov3.cfg"
+  weights_path: "yolo/yolov3.weights"
+  classes_path: "yolo/coco.names"
+  input_size: 416
+  scale_factor: 0.00392
+
+# Detection Parameters
+detection:
+  confidence_threshold: 0.5
+  nms_threshold: 0.4
+  max_detections: 100
+
+# Input/Output Settings
+io:
+  input:
+    camera_index: 0
+    image_formats: [".jpg", ".jpeg", ".png", ".bmp", ".tiff"]
+    video_formats: [".mp4", ".avi", ".mov", ".mkv", ".wmv"]
+  
+  output:
+    save_detections: true
+    output_format: "jpg"
+    quality: 95
+    save_annotations: true
+    annotation_format: "json"
+
+# Display Settings
+display:
+  show_confidence: true
+  show_class_names: true
+  font_scale: 0.5
+  font_thickness: 2
+  bbox_thickness: 2
+  show_fps: true
+  window_name: "SmartEyes Detection"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "smarteyes.log"
+  max_size: "10MB"
+  backup_count: 5
+
+# Performance Settings
+performance:
+  use_gpu: false
+  gpu_device: 0
+  batch_size: 1
+  num_threads: 4
+  memory_fraction: 0.5
+
+# Safety Settings
+safety:
+  max_processing_time: 30.0  # seconds
+  emergency_stop_key: "q"
+  auto_save_interval: 60  # seconds
