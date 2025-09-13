@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 SmartEyes Obstacle Detection System
-A computer vision-based obstacle detection system using OpenCV and YOLO.
+A computer vision-based obstacle detection system using OpenCV and YOLOv7.
 
 Author: Harshini
 Date: 2024
@@ -39,11 +39,11 @@ class SmartEyesDetector:
         
     def load_model(self, config_path, weights_path, classes_path):
         """
-        Load YOLO model and classes.
+        Load YOLOv7 model and classes.
         
         Args:
-            config_path (str): Path to YOLO config file
-            weights_path (str): Path to YOLO weights file
+            config_path (str): Path to YOLOv7 config file
+            weights_path (str): Path to YOLOv7 weights file
             classes_path (str): Path to classes file
         """
         try:

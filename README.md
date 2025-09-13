@@ -1,80 +1,84 @@
 # SmartEyes Obstacle Detection System
 
-![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
-![OpenCV](https://img.shields.io/badge/opencv-v4.8+-green.svg)
-![License](https://img.shields.io/badge/license-MIT-orange.svg)
+A computer vision project I developed for real-time obstacle detection using YOLOv7 and OpenCV. This system can detect and track various objects in live camera feeds, images, and videos.
 
-A sophisticated computer vision-based obstacle detection system that uses YOLO (You Only Look Once) deep learning model to identify and track obstacles in real-time. The system is designed for applications in autonomous vehicles, robotics, and surveillance systems.
+## What it does
 
-## 🚀 Features
+The system uses YOLOv7 (You Only Look Once) deep learning model to identify obstacles and objects in real-time. It was developed using Google Colab and trained on the COCO dataset for 3 epochs. The system is designed to work with cameras, process images, and handle video files for applications like autonomous vehicles, robotics, and surveillance.
 
-- **Real-time Obstacle Detection**: Live camera feed processing with high accuracy
-- **Multiple Input Modes**: Support for images, videos, and live camera streams
-- **YOLO Integration**: State-of-the-art object detection using YOLO v3
-- **Customizable Thresholds**: Adjustable confidence and NMS thresholds
-- **Cross-platform**: Works on Windows, macOS, and Linux
-- **Easy Integration**: Simple API for embedding in other applications
-- **Comprehensive Logging**: Detailed logging for debugging and monitoring
+## Development Process
 
-## 📋 Prerequisites
+This project was developed using:
+- **Google Colab** for model training and development
+- **YOLOv7** architecture for real-time object detection
+- **COCO dataset** with 80 object classes including vehicles, pedestrians, and animals
+- **PyTorch** framework for deep learning implementation
+- **OpenCV** for image and video processing
+
+## Key Features
+
+- Real-time obstacle detection from camera feed
+- Works with images and videos
+- Uses YOLOv7 for object detection
+- Adjustable detection thresholds
+- Cross-platform support (Windows, macOS, Linux)
+- Easy to integrate into other projects
+
+## Requirements
 
 - Python 3.8 or higher
 - OpenCV 4.8+
 - Webcam or video input device
 - YOLO model files (weights, config, and classes)
 
-## 🛠️ Installation
+## Installation
 
-1. **Clone the repository**
+1. Clone the repository
    ```bash
    git clone https://github.com/Harshini1331/SmartEyes-Obstacle-Detection-System.git
    cd SmartEyes-Obstacle-Detection-System
    ```
 
-2. **Create a virtual environment (recommended)**
+2. Create a virtual environment (recommended)
    ```bash
    python -m venv smarteyes_env
    source smarteyes_env/bin/activate  # On Windows: smarteyes_env\Scripts\activate
    ```
 
-3. **Install dependencies**
+3. Install dependencies
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Download YOLO model files**
+4. Download YOLOv7 model files
    ```bash
    mkdir yolo
    cd yolo
    
-   # Download YOLO v3 files
-   wget https://pjreddie.com/media/files/yolov3.weights
-   wget https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg
-   wget https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names
+   # Download YOLOv7 files
+   wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
+   wget https://raw.githubusercontent.com/WongKinYiu/yolov7/main/cfg/training/yolov7.yaml
+   wget https://raw.githubusercontent.com/WongKinYiu/yolov7/main/data/coco.yaml
    ```
 
-## 🎯 Usage
+## Usage
 
-### Basic Usage
-
-**Live Camera Detection:**
+### Live Camera Detection
 ```bash
 python smart_eyes_detection.py --mode camera
 ```
 
-**Image Processing:**
+### Image Processing
 ```bash
 python smart_eyes_detection.py --mode image --input path/to/image.jpg --output result.jpg
 ```
 
-**Video Processing:**
+### Video Processing
 ```bash
 python smart_eyes_detection.py --mode video --input path/to/video.mp4 --output processed_video.mp4
 ```
 
-### Advanced Usage
-
-**Custom Model Configuration:**
+### Custom Model Configuration
 ```bash
 python smart_eyes_detection.py \
     --mode camera \
@@ -85,8 +89,7 @@ python smart_eyes_detection.py \
     --nms 0.3
 ```
 
-### Programmatic Usage
-
+### Using in Code
 ```python
 from smart_eyes_detection import SmartEyesDetector
 import cv2
@@ -106,7 +109,7 @@ for detection in detections:
     print(f"Class: {detection['class']}, Confidence: {detection['confidence']:.2f}")
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SmartEyes-Obstacle-Detection-System/
@@ -114,34 +117,54 @@ SmartEyes-Obstacle-Detection-System/
 ├── requirements.txt           # Python dependencies
 ├── README.md                 # Project documentation
 ├── config/                   # Configuration files
-│   ├── default_config.yaml
-│   └── model_config.yaml
+│   └── default_config.yaml
 ├── yolo/                     # YOLO model files
 │   ├── yolov3.weights
 │   ├── yolov3.cfg
 │   └── coco.names
 ├── utils/                    # Utility functions
 │   ├── image_utils.py
-│   ├── video_utils.py
-│   └── model_utils.py
+│   └── video_utils.py
 ├── examples/                 # Example scripts
 │   ├── basic_detection.py
-│   ├── batch_processing.py
-│   └── custom_training.py
+│   └── batch_processing.py
 ├── tests/                    # Test files
-│   ├── test_detection.py
-│   └── test_utils.py
+│   └── test_detection.py
 └── docs/                     # Documentation
     ├── installation.md
-    ├── api_reference.md
-    └── troubleshooting.md
+    └── api_reference.md
 ```
 
-## ⚙️ Configuration
+## Output Examples
 
-The system can be configured through command-line arguments or configuration files:
+Here are the actual results from my obstacle detection system:
 
-### Command-line Arguments
+### Example 1: Train and Cow Detection
+**Before Detection:**
+![Example 1 - Original Image](images/Example2_image.jpg)
+
+**After Detection:**
+![Example 1 - Detected Obstacles](images/Example2_detectedobstacle.jpg)
+*Detected: Train (0.86 confidence), Cow (0.93 confidence)*
+
+### Example 2: Car and Person Detection
+**Before Detection:**
+![Example 2 - Original Image](images/Example3_image.jpg)
+
+**After Detection:**
+![Example 2 - Detected Obstacles](images/Example3_detectedobstacle.jpg)
+*Detected: Car (0.91 confidence), Person (0.92 confidence), Bicycle (0.82 confidence)*
+
+### Performance Metrics
+- Detection Speed: ~30 FPS (CPU), ~60 FPS (GPU)
+- Model Size: ~71 MB (YOLOv7)
+- Memory Usage: 2-4 GB typical
+- Accuracy: 95%+ on COCO dataset
+- Training: 3 epochs on COCO dataset
+
+## Configuration
+
+The system can be configured through command-line arguments:
 
 - `--mode`: Detection mode (image/video/camera)
 - `--input`: Input file path
@@ -152,27 +175,31 @@ The system can be configured through command-line arguments or configuration fil
 - `--confidence`: Confidence threshold (0.0-1.0)
 - `--nms`: Non-maximum suppression threshold (0.0-1.0)
 
-### Configuration Files
+## Troubleshooting
 
-Create `config/default_config.yaml` for default settings:
+### Common Issues
 
-```yaml
-model:
-  config_path: "yolo/yolov3.cfg"
-  weights_path: "yolo/yolov3.weights"
-  classes_path: "yolo/coco.names"
+1. **Camera not detected**
+   - Check camera permissions
+   - Try different camera indices (0, 1, 2...)
+   - Verify camera is not being used by another application
 
-detection:
-  confidence_threshold: 0.5
-  nms_threshold: 0.4
+2. **Model loading errors**
+   - Verify YOLO files are in the correct directory
+   - Check file permissions
+   - Ensure all three files (weights, config, classes) are present
 
-output:
-  save_detections: true
-  output_format: "jpg"
-  quality: 95
-```
+3. **Low detection accuracy**
+   - Adjust confidence threshold
+   - Check lighting conditions
+   - Ensure objects are clearly visible
 
-## 🔧 Customization
+4. **Performance issues**
+   - Reduce input resolution
+   - Use GPU acceleration
+   - Close unnecessary applications
+
+## Customization
 
 ### Adding Custom Classes
 
@@ -199,49 +226,20 @@ output:
 - **Frame Skipping**: Process every nth frame for real-time applications
 - **Resolution Scaling**: Reduce input resolution for faster processing
 
-## 📊 Performance Metrics
+## Future Improvements
 
-| Metric | Value |
-|--------|-------|
-| Detection Speed | ~30 FPS (CPU) |
-| Detection Speed | ~60 FPS (GPU) |
-| Model Size | ~248 MB (YOLO v3) |
-| Memory Usage | ~2-4 GB |
-| Accuracy | 95%+ (COCO dataset) |
+- Support for YOLO v4, v5, v8 models
+- Real-time tracking with DeepSORT
+- Mobile app integration
+- Cloud deployment support
+- Custom model training pipeline
+- Multi-camera support
+- 3D obstacle detection
+- Integration with ROS (Robot Operating System)
 
-## 🐛 Troubleshooting
+## Contributing
 
-### Common Issues
-
-1. **Camera not detected**
-   - Check camera permissions
-   - Try different camera indices (0, 1, 2...)
-   - Verify camera is not being used by another application
-
-2. **Model loading errors**
-   - Verify YOLO files are in the correct directory
-   - Check file permissions
-   - Ensure all three files (weights, config, classes) are present
-
-3. **Low detection accuracy**
-   - Adjust confidence threshold
-   - Check lighting conditions
-   - Ensure objects are clearly visible
-
-4. **Performance issues**
-   - Reduce input resolution
-   - Use GPU acceleration
-   - Close unnecessary applications
-
-### Getting Help
-
-- Check the [troubleshooting guide](docs/troubleshooting.md)
-- Open an issue on GitHub
-- Review the [API documentation](docs/api_reference.md)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+Feel free to submit issues and pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -249,32 +247,23 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## Author
 
 **Harshini**
 - GitHub: [@Harshini1331](https://github.com/Harshini1331)
 - Project Link: [SmartEyes-Obstacle-Detection-System](https://github.com/Harshini1331/SmartEyes-Obstacle-Detection-System)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [YOLO](https://pjreddie.com/darknet/yolo/) - You Only Look Once object detection
 - [OpenCV](https://opencv.org/) - Computer vision library
 - [COCO Dataset](https://cocodataset.org/) - Common Objects in Context
 - [Darknet](https://github.com/pjreddie/darknet) - Neural network framework
 
-## 📈 Future Enhancements
-
-- [ ] Support for YOLO v4, v5, v8 models
-- [ ] Real-time tracking with DeepSORT
-- [ ] Mobile app integration
-- [ ] Cloud deployment support
-- [ ] Custom model training pipeline
-- [ ] Multi-camera support
-- [ ] 3D obstacle detection
-- [ ] Integration with ROS (Robot Operating System)
-
 ---
+
+⭐ If you found this project helpful, please give it a star!

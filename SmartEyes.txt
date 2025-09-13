@@ -1,0 +1,710 @@
+
+
+
+  SMARTEYES: OBSTACLE DETECTION   SYSTEM
+
+MINI PROJECT
+Submitted by HARSHINI M - 212220230022
+KAYALVIZHI M - 212220230024 SANDHYA CHARU N– 212220230041
+
+Bachelor of Technology in Artificial Intelligence and Data Science
+
+2020-2024 Batch
+TEAM NO: 15
+
+Under the guidance of: Ms. Jaba Jasphin E.T
+Assistant Professor, Department of AI & DS
+
+
+
+Saveetha Engineering College Chennai - 602105
+An Autonomous Institution
+Affiliated to Anna University, Chennai - 600 025
+ 
+
+
+
+
+BONAFIDE CERTIFICATE
+
+
+Certified that this mini project report on the topic “SMARTEYES: OBSTACLE DETECTION SYSTEM”
+is the bonafide work of
+
+
+HARSHINI M - 212220230022 KAYALVIZHI M - 212220230024 SANDHYACHARU N – 212220230041
+
+Bachelor of Technology in Artificial Intelligence and Data Science who carried out the project work under my supervision.
+
+
+
+
+
+
+
+
+
+Mrs. JABA JASPHIN SUPERVISOR ASSISTANT PROFESSOR AI & DS
+Saveetha Engineering College
+Chennai – 602105 India	DR. G. KARTHI
+HEAD OF THE DEPARTMENT ASSISTANT PROFESSOR
+AI & DS
+Saveetha Engineering College Chennai – 602105 India
+
+
+
+
+
+Submitted for the Autonomous End Semester Examination Mini Project
+ 
+
+
+
+
+
+TABLE OF CONTENTS
+1.	Introduction	1
+2.	Problem Statement	2
+2.1	Existing System	3
+2.1.1	Reference 1	3
+2.1.2	Reference 2	3
+2.1.3	Reference 3	4
+2.1.4	Reference 4	5
+2.1.5	Reference 5	5
+2.1.6	Summary of Literature Survey	6
+2.2	Scope of the System	9
+2.3	Proposed System Methodology	11
+3.	System Analysis and Design	13
+3.1	Software Requirements	13
+3.2	Module Description	13
+3.3	System Architecture	14
+4	Implementation	14
+5	Results	25
+6	Conclusion	30
+7	References	31
+ 
+
+
+1.	INTRODUCTION
+
+Object detection is one of the most important problems in Computer Vision which involves localizing meaningful objects from an image suitable to a problem use case. Obstacle detection systems are useful in various domains, ranging from autonomous vehicles to industrial robotics and surveillance applications. The ability to accurately detect and classify obstacles in real-time plays a critical role in ensuring safety, enabling autonomous navigation, and facilitating intelligent decision-making.
+
+The goal of an obstacle detection system is to identify and localize objects or barriers that may obstruct the path of a moving entity, such as a vehicle or a robot. These objects can include pedestrians, vehicles, animals, stationary structures, or any other hazards. Traditional
+obstacle detection methods often relied on manual feature extraction and rule-based algorithms, which had limitations in handling complex scenes and adapting to diverse environments.
+However, with the advancements in deep learning and computer vision techniques, the pattern has shifted towards data-driven approaches.
+
+Obstacle detection systems often rely on sensor inputs, such as cameras, LiDAR (Light Detection and Ranging), radar, or a combination of these, to capture information about the surrounding environment. These sensors provide data in the form of images, point clouds, or signals, which are then processed using computer vision, machine learning, or signal processing techniques to detect and localize obstacles.
+
+One popular deep learning approach for obstacle detection is the use of convolutional neural networks (CNNs) combined with advanced object detection algorithms, such as YOLO (You Only Look Once) or SSD (Single Shot Detector). These algorithms excel at real-time object detection, allowing obstacle detection systems to operate efficiently in dynamic environments.
+ 
+
+
+
+2.	PROBLEM STATEMENT
+
+Obstacle detection is a critical aspect of various applications, including robotic systems, and assistive technologies. The primary challenge is to develop an efficient and reliable obstacle detection system that can accurately identify obstacles in real-time, enabling safe navigation and preventing potential collisions.
+
+
+The problem statement is to design and implement an obstacle detection system that overcomes the limitations such as they often struggle to detect small or distant obstacles, and their performance can be compromised in challenging lighting conditions or complex environments. It provides robust and accurate detection of obstacles. The system should leverage advanced computer vision techniques, such as deep learning algorithms, to analyse input from sensors such as cameras, lidar, radar, or ultrasonic sensors. It should be capable of detecting various types of obstacles, including stationary objects, moving objects, pedestrians, and environmental hazards.
+
+
+The proposed system should operate in real-time, providing immediate feedback to the user or the autonomous vehicle, enabling timely and appropriate responses to detected obstacles. It should be adaptable to different environments and lighting conditions, ensuring reliable performance in both indoor and outdoor settings.
+
+
+Additionally, the system should prioritize safety by minimizing false positives and false negatives. It should strike a balance between sensitivity and specificity, accurately detecting obstacles while avoiding unnecessary warnings or missed detections.
+
+
+By addressing these challenges, the obstacle detection system aims to enhance safety, efficiency, and reliability in a wide range of applications, contributing to the advancement of autonomous navigation and human-machine interaction.
+ 
+
+
+2.1	EXISTING SYSTEM
+
+2.1.1	REFERENCE 1
+
+Paper 1: Obstacle detection in rail transit
+
+
+In this article, the authors propose an Improved-YOLOv4 network for obstacle detection in rail transit using deep learning. The network includes a D-CSPDarknet for feature extraction, a combination of path aggregation and feature pyramid networks for feature fusion, and a spatial pyramid pooling network for obstacle detection. A method of dividing regions of interest using a mask was proposed to improve model accuracy while achieving a processing speed of 0.004 s. The authors used data augmentation, transfer learning, and phased training strategies to improve the model's performance. This method improved-YOLOv4 with other commonly used detection models and demonstrate its effectiveness in detecting obstacles in medium and long distances.
+The model's anti-noise ability for the diversity of train operation scenes was also tested. The authors conclude that the Improved-YOLOv4 model is better than other object detection networks and has a stronger anti-interference ability.
+
+
+2.1.2	REFERENCE 2
+
+Paper 2: Obstacle detection Using Deep Learning for Visually Impaired People
+
+
+The article discusses the development of a system that uses deep learning techniques for real- time object detection and recognition to aid visually impaired individuals. The system processes real-time inputs from a camera and predicts the objects using deep neural networks. Google's Text-To-Speech (GTTS) API module is used for the voice output that accurately detects and recognizes object categories and positions. The methodology detects 91 object categories, including indoor, outdoor, and electronic devices. Existing applications for the visually impaired mainly focus on sensing obstacles near the user and alerting them through alarms or beeping sounds. However, the proposed system provides real-time object recognition and voice output without requiring separate detection devices, enabling visually impaired individuals to be
+ 
+
+
+
+independent when navigating their surroundings. The YOLO (You Only Look Once) algorithm is used for real-time object recognition. The YOLO7000 model is faster and more efficient than any other method for complete picture processing, improving object detection efficiency.
+
+
+2.1.3	REFERENCE 3
+
+Paper 3: Obstacles detection in self-driving car prototype
+
+
+Deep Learning is a new area of Machine Learning and research, which was introduced with the aim of taking Machine learning closer to one of its original and main goals which is: AI (Artificial intelligence). If we speak of automatic learning algorithms, they tend to be linear, the DL (Deep Learning) algorithms are configured to increase complexity and abstraction. To learn in depth, imagine a 5-year-old whose first word is cat. The child Keeps on learning what a cat is by showing objects and saying the word cat. The mother says: “Yes, it’s a cat” or “No, it’s not a cat”. As the child continues to point objects, he becomes more aware of the characteristics and features of all cats. What the child does, without even Knowing what he is doing, clarifies a very complex level of abstraction by constructing a scale in which each level of abstraction is created with the help of Knowledge acquired the layer which was before on the scale. The programs that run on the system which uses deep learning go through the same process. Each algorithm applies a non-linear approach on its input and it uses what it learns to make a statistical model from the given output. Repetition continues until the output has reached an acceptable point of correctness. The number of layers in which the process is passing at each stage is what gives the name a prefix as deep.
+ 
+
+
+2.1.4.	REFERENCE 4
+
+Paper 4: Obstacle Detection and Distance Measurement Method for Substation Patrol Robot
+
+A new study proposes of an innovative obstacle avoidance method for substation patrol robots that detects obstacles and distances in real-time. The research aims to enhance the efficiency, security, and automation of substation maintenance, ensuring the safe and reliable operation of the power grid. The robot has been designed to replace human workers in inspecting substation equipment, reducing the work intensity, danger, and risk associated with the inspection process. This method is based on deep learning and depth image processing, tested in real substation environments. It uses pixel-level instance segmentation between obstacles and roads, along with pixel-level matching of obstacles' segmentation mask and depth data. The method can not only enhance substation maintenance safety and efficiency but also reduce front-line workers' labor intensity. It uses Mask R-CNN and RGB-D depth images for obstacle detection and distance measurement. Pre-processed RGB images train the Mask R-CNN network, while depth data is extracted from the depth image. By connecting pixel-level masks from the trained network with the depth data, the robot-obstacle distance can be determined through pixel-level matching.
+
+2.1.5.	REFERENCE 5
+
+Paper 5: Autonomous Machines in Agriculture
+
+
+Chatbots are increasingly finding their way into e-commerce and e-services, as their implementation opens up promising opportunities to improve customer service. The present paper examines chatbots in this context, elaborating on their functional aspects that are rapidly leading to significant improvements in service quality. First, based on a literature review of recent publications in this field, an overview of their key features and functionalities underlining the relevance of chatbots for customer service is provided. Second, a further contribution is made by introducing two categories of chatbots’ objectives based on their functional dedication,
+i.e. “improvement of service performance” and “fulfillment of customer’s expectations”. The
+ 
+
+
+
+considered chatbots’ customer-related functions are interaction, entertainment, problem-solving, trendiness, and customization. The chatbot categories are discussed in detail. Their positive influence on service quality, constituting the chatbots’ functional goal, as well as the potential of chatbots in customer service are pointed out.
+
+2.1.6 Summary of Literature Survey
+
+
+The literature review on obstacle detection reveals several key findings and trends. Various techniques and algorithms have been explored to address the challenge of accurate obstacle detection in different applications.
+
+
+Computer vision approaches, including deep learning-based methods, have gained significant attention due to their ability to learn intricate features and classify obstacles effectively. These techniques have shown promising results in detecting stationary objects, pedestrians, and vehicles.
+
+
+Sensor fusion, combining inputs from multiple sensors such as cameras, lidar, and radar, has been widely adopted to improve detection accuracy and overcome limitations of individual sensors.
+This integration provides a comprehensive understanding of the surrounding environment.
+
+
+Researchers have also focused on addressing challenges such as occlusions, varying lighting conditions, and complex backgrounds to enhance the robustness and adaptability of obstacle detection systems.
+
+
+Evaluation metrics, such as precision, recall, and F1 score, have been commonly used to assess the performance of obstacle detection algorithms. Additionally, datasets with annotated obstacle images and videos have been developed to facilitate algorithm training and evaluation.
+
+
+Overall, the literature review highlights the continuous efforts in developing advanced techniques, sensor fusion approaches, and evaluation methodologies to achieve accurate and real-time obstacle detection, ultimately enhancing safety and efficiency in various domains.
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+2.2	SCOPE OF THE SYSTEM
+
+1.	Object Detection: The system should be able to detect and identify objects or obstacles present in the environment accurately. This includes detecting static obstacles like walls, furniture, or trees, as well as dynamic obstacles like moving vehicles, pedestrians, or animals. The system should have the capability to differentiate between various objects and classify them based on their characteristics.
+
+2.	Distance Estimation: An obstacle detection system often needs to estimate the distance between the system itself and the detected obstacles. This information is crucial for navigation, path planning, and collision avoidance. The accuracy and range of distance estimation depend on the chosen sensor technology, such as LiDAR, radar, or ultrasonic sensors.
+ 
+
+
+
+3.	Real-time Operation: Many applications, such as autonomous vehicles or robotics, require real-time obstacle detection to ensure prompt decision-making and quick response to changing environments. The system should provide timely and up-to-date information about the detected obstacles to facilitate safe and efficient navigation.
+
+4.	Environment Adaptability: Obstacle detection systems should be adaptable to various environmental conditions. They should be capable of detecting obstacles in different lighting conditions, weather conditions (rain, fog, snow), or varying terrains (urban, rural, off-road). Robustness and adaptability to different scenarios are important to ensure reliable performance.
+
+
+
+5.	Collision Avoidance: One of the primary objectives of obstacle detection systems is to prevent collisions with detected obstacles. The system should have mechanisms in place to generate appropriate warnings or take necessary actions to avoid collisions. This may involve generating alerts, adjusting the system's speed or trajectory, or triggering emergency braking systems.
+
+6.	Scalability and Integration: Depending on the application, obstacle detection systems may need to scale to handle different levels of complexity and integration with other systems. For example, in autonomous vehicles, the obstacle detection system needs to integrate with other components such as navigation systems, control algorithms, and decision-making modules.
+
+
+
+7.	System Reliability and Redundancy: Depending on the criticality of the application, obstacle detection systems may require redundancy and fail-safe mechanisms to ensure reliable operation. Redundant sensors, backup systems, and fault detection and recovery strategies can be implemented to enhance the system's reliability.
+ 
+
+
+2.3	PROPOSED SYSTEM METHODOLOGY
+
+	Vision-based Methodology:
+
+-	Image Processing: This methodology involves analyzing images or video frames captured by cameras to detect obstacles. Techniques such as edge detection, object segmentation, and feature extraction can be used to identify and classify obstacles based on visual features.
+
+-	Machine Learning: Machine learning algorithms, such as Convolutional Neural Networks (CNNs), can be trained on labeled datasets to recognize and classify obstacles in images or video data. This methodology enables the system to learn and generalize patterns and characteristics of obstacles.
+
+	LiDAR-based Methodology:
+
+-	Cloud Processing: LiDAR sensors generate 3D point clouds representing the environment. Point cloud processing techniques, such as clustering, outlier removal, or surface reconstruction, can be applied to detect and extract obstacle information from the point cloud data.
+
+-	Machine Learning: Machine learning algorithms can be employed to learn and classify obstacles based on the features extracted from the LiDAR point clouds. For example, techniques like supervised learning or unsupervised clustering can be used for obstacle detection.
+
+
+	Radar-based Methodology:
+
+-	Signal Processing: Radar sensors emit radio waves and analyze the reflected signals to detect obstacles. Signal processing techniques, such as filtering, Doppler analysis, or range estimation, can be used to identify and track obstacles based on the radar measurements.
+
+-	Machine Learning: Machine learning algorithms can be trained on radar data to detect and classify obstacles. Techniques like pattern recognition, support vector machines (SVM), or neural networks can be applied to learn and predict obstacle presence and characteristics.
+ 
+
+
+
+	Sensor Fusion Methodology:
+
+-	Sensor Fusion: This methodology combines data from multiple sensors, such as cameras, LiDAR, radar, or ultrasonic sensors, to improve the accuracy and reliability of obstacle detection. Techniques like Kalman filtering, Particle filtering, or Bayesian approaches can be used to integrate the sensor data and generate a comprehensive understanding of the environment.
+
+-	Multi-Modal Fusion: In this approach, information from different sensor modalities is fused at a higher level, such as object level or semantic level. By combining the strengths of each sensor, the system can achieve more robust and accurate obstacle detection.
+
+	Deep Learning Methodology:
+
+
+-	Convolutional Neural Networks (CNNs): Deep learning techniques, particularly CNNs, have shown great success in object detection, including obstacle detection. CNN architectures like YOLO (You Only Look Once) or SSD (Single Shot MultiBox Detector) can be utilized to detect obstacles in real-time based on sensor data.
+
+-	Transfer Learning: Transfer learning allows leveraging pre-trained models on large datasets to initialize and adapt them to obstacle detection tasks. By fine- tuning these models on specific obstacle detection data, the system can benefit from their learned features and generalization capabilities.
+
+	Simultaneous Localization and Mapping (SLAM) Methodology:
+
+
+- SLAM-based Approach: SLAM algorithms combine mapping of the environment and localization of the system within that map. SLAM-based obstacle detection involves incorporating the detection and tracking of obstacles as part of the SLAM process. By comparing the real-time sensor measurements with the constructed map, obstacles can be detected based on deviations or inconsistencies in the environment model.
+ 
+
+
+3.	SYSTEM ANALYSIS AND DESIGN
+
+3.1	SOFTWARE REQUIREMENTS
+
+•	Google Colab
+•	YOLOv7 Detection Model
+
+3.2	MODULE DESCRIPTION
+
+•	Google Colab
+
+-	Google Colab is a cloud-based integrated development environment (IDE) that allows you to write, run, and collaborate on Python code. It provides a Jupyter Notebook interface and offers several advantages for data analysis, machine learning, and deep learning projects.
+
+•	YOLOv7 Detection Model
+
+-	YOLOv7(You Only Look Once) algorithm employs convolutional neural networks (CNN) to detect objects in real-time. As the name suggests, the algorithm requires only a single forward propagation through a neural network to detect objects. This means that prediction in the entire image is done in a single algorithm run. It is the fastest and most accurate real-time object detector to date. YOLOv7 surpasses all previous object detectors in terms of both speed and accuracy.
+ 
+
+
+
+
+
+
+3.4 SYSTEM ARCHITECTURE
+
+
+
+
+
+
+
+
+4.	IMPLEMENTATION
+
+1.	Dataset Preparation:
+-	Download the COCO dataset, which contains a large number of labeled images.
+-	Split the dataset into training and validation sets.
+-	Extract the necessary labels for obstacle classes from the dataset.
+
+
+2.	Model Training:
+-	Install YOLOv7 and its dependencies.
+-	Configure the YOLOv7 model architecture and hyperparameters.
+-	Initialize the model with pre-trained weights.
+-	Fine-tune the model using the training set and the extracted obstacle labels.
+-	Evaluate the model's performance on the validation set to measure accuracy.
+ 
+
+
+
+3.	Model Testing:
+-	Obtain new images or video footage for testing the trained model.
+-	Preprocess the input images by resizing and normalizing them.
+-	Feed the preprocessed images into the trained YOLOv7 model.
+-	Perform obstacle detection using the model's output.
+-	Visualize and analyze the detection results, including bounding boxes and class labels.
+
+
+4.	Performance Evaluation:
+-	Calculate metrics such as precision, recall, and F1 score to assess the model's accuracy.
+-	Compare the performance of the obstacle detection model with other approaches, if applicable.
+
+5.	Improvements and Future Work:
+-	Experiment with different variations of the YOLOv7 model architecture to improve accuracy and speed.
+-	Augment the dataset by collecting additional obstacle images or using data augmentation techniques.
+-	Explore transfer learning by using pre-trained models from related tasks or domains.
+-	Deploy the obstacle detection model in real-time applications, such as autonomous vehicles or drones.
+ 
+
+
+PROGRAM
+
+import sys import torch
+print(f"Python version: {sys.version}, {sys.version_info} ") print(f"Pytorch version: {torch._version_} ")
+
+from google.colab import drive drive.mount('/content/gdrive')
+
+%cd /content/gdrive/MyDrive/yolov7
+data_location = "/content/gdrive/MyDrive/yolov7/data"
+
+%cat {data_location}/coco.yaml
+
+# define number of classes based on YAML import yaml
+with open(data_location + "/coco.yaml", 'r') as stream: num_classes = str(yaml.safe_load(stream)['nc'])
+
+%cat /content/gdrive/MyDrive/yolov7/cfg/training/yolov7.yaml
+
+%cd /content/gdrive/MyDrive/yolov7
+!python train.py --batch 8 --cfg cfg/training/yolov7.yaml --epochs 3 --data data/coco.yaml --weights yolov7.pt
+
+!# Detection
+!python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source
+/content/car.jpg
+ 
+
+
+# define helper functions to show images def imShow(path):
+import cv2
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+image = cv2.imread(path) height, width = image.shape[:2]
+resized_image = cv2.resize(image,(2*width, 2*height), interpolation = cv2.INTER_CUBIC)
+
+fig = plt.gcf() fig.set_size_inches(18, 10) plt.axis("off")
+plt.imshow(cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)) plt.show()
+
+imShow("runs/detect/exp29/car.jpg")
+
+### Detect.py
+
+import argparse import time
+from pathlib import Path
+
+import cv2 import torch
+import torch.backends.cudnn as cudnn from numpy import random
+ 
+
+
+
+
+from models.experimental import attempt_load
+from utils.datasets import LoadStreams, LoadImages
+from utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
+scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path from utils.plots import plot_one_box
+from utils.torch_utils import select_device, load_classifier, time_synchronized,
+TracedModel
+
+
+
+def detect(save_img=False):
+source, weights, view_img, save_txt, imgsz, trace = opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size, not opt.no_trace
+save_img = not opt.nosave and not source.endswith('.txt') # save inference images webcam = source.isnumeric() or source.endswith('.txt') or source.lower().startswith(
+('rtsp://', 'rtmp://', 'http://', 'https://'))
+
+# Directories
+save_dir = Path(increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok)) # increment run
+(save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True) # make dir
+
+# Initialize set_logging()
+device = select_device(opt.device)
+half = device.type != 'cpu' # half precision only supported on CUDA
+
+# Load model
+model = attempt_load(weights, map_location=device) # load FP32 model
+ 
+
+
+stride = int(model.stride.max()) # model stride
+imgsz = check_img_size(imgsz, s=stride) # check img_size
+
+if trace:
+model = TracedModel(model, device, opt.img_size)
+
+if half:
+model.half() # to FP16
+
+# Second-stage classifier classify = False
+if classify:
+modelc = load_classifier(name='resnet101', n=2) # initialize modelc.load_state_dict(torch.load('weights/resnet101.pt',
+map_location=device)['model']).to(device).eval()
+
+# Set Dataloader
+vid_path, vid_writer = None, None if webcam:
+view_img = check_imshow()
+cudnn.benchmark = True # set True to speed up constant image size inference dataset = LoadStreams(source, img_size=imgsz, stride=stride)
+else:
+dataset = LoadImages(source, img_size=imgsz, stride=stride)
+
+# Get names and colors
+names = model.module.names if hasattr(model, 'module') else model.names colors = [[random.randint(0, 255) for _ in range(3)] for _ in names]
+ 
+
+
+# Run inference
+if device.type != 'cpu': model(torch.zeros(1, 3, imgsz,
+imgsz).to(device).type_as(next(model.parameters()))) # run once old_img_w = old_img_h = imgsz
+old_img_b = 1
+
+t0 = time.time()
+for path, img, im0s, vid_cap in dataset:
+img = torch.from_numpy(img).to(device)
+img = img.half() if half else img.float() # uint8 to fp16/32 img /= 255.0 # 0 - 255 to 0.0 - 1.0
+if img.ndimension() == 3: img = img.unsqueeze(0)
+
+# Warmup
+if device.type != 'cpu' and (old_img_b != img.shape[0] or old_img_h != img.shape[2] or old_img_w != img.shape[3]):
+old_img_b = img.shape[0] old_img_h = img.shape[2] old_img_w = img.shape[3] for i in range(3):
+model(img, augment=opt.augment)[0]
+
+# Inference
+t1 = time_synchronized()
+with torch.no_grad(): # Calculating gradients would cause a GPU memory leak pred = model(img, augment=opt.augment)[0]
+t2 = time_synchronized()
+ 
+
+
+# Apply NMS
+pred = non_max_suppression(pred, opt.conf_thres, opt.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
+t3 = time_synchronized()
+
+# Apply Classifier if classify:
+pred = apply_classifier(pred, modelc, img, im0s)
+
+# Process detections
+for i, det in enumerate(pred): # detections per image if webcam: # batch_size >= 1
+p, s, im0, frame = path[i], '%g: ' % i, im0s[i].copy(), dataset.count else:
+p, s, im0, frame = path, '', im0s, getattr(dataset, 'frame', 0)
+
+p = Path(p) # to Path
+save_path = str(save_dir / p.name) # img.jpg
+txt_path = str(save_dir / 'labels' / p.stem) + ('' if dataset.mode == 'image' else f'_{frame}') # img.txt
+gn = torch.tensor(im0.shape)[[1, 0, 1, 0]] # normalization gain whwh if len(det):
+# Rescale boxes from img_size to im0 size
+det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
+
+# Print results
+for c in det[:, -1].unique():
+n = (det[:, -1] == c).sum() # detections per class
+s += f"{n} {names[int(c)]}{'s' * (n > 1)}\n" # add to string
+ 
+
+
+# Write results
+for *xyxy, conf, cls in reversed(det): if save_txt: # Write to file
+xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(- 1).tolist() # normalized xywh
+line = (cls, *xywh, conf) if opt.save_conf else (cls, *xywh) # label
+ 
+format
+ 
+
+with open(txt_path + '.txt', 'a') as f:
+f.write(('%g ' * len(line)).rstrip() % line + '\n')
+ 
+
+if save_img or view_img: # Add bbox to image label = f'{names[int(cls)]} {conf:.2f}'
+if names[int(cls)] in ["bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat"]:
+plot_one_box(xyxy, im0, label=label, color=(0, 0, 255), line_thickness=2)
+else:
+plot_one_box(xyxy, im0, label=label, color=(255, 0, 0), line_thickness=1) # Blue color for other classes
+
+
+
+new=print("\n\nTHE OBSTACLES DETECTED ARE:\n") new1=print(f'{s}\n')
+
+ 
+
+
+NMS')
+ 
+# Print time (inference + NMS)
+print(f'Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms)
+ 
+
+# Stream results if view_img:
+cv2.imshow(str(p), im0)
+ 
+
+
+cv2.waitKey(1) # 1 millisecond
+
+# Save results (image with detections) if save_img:
+if dataset.mode == 'image': cv2.imwrite(save_path, im0)
+print(f" The image with the result is saved in: {save_path}") else: # 'video' or 'stream'
+if vid_path != save_path: # new video vid_path = save_path
+if isinstance(vid_writer, cv2.VideoWriter): vid_writer.release() # release previous video writer
+if vid_cap: # video
+fps = vid_cap.get(cv2.CAP_PROP_FPS)
+w = int(vid_cap.get(cv2.CAP_PROP_FRAME_WIDTH)) h = int(vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+else: # stream
+fps, w, h = 30, im0.shape[1], im0.shape[0] save_path += '.mp4'
+vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))
+vid_writer.write(im0)
+
+if save_txt or save_img:
+s = f"\n{len(list(save_dir.glob('labels/*.txt')))} labels saved to {save_dir / 'labels'}" if save_txt else ''
+#print(f"Results saved to {save_dir}{s}") print(f'Done. ({time.time() - t0:.3f}s)')
+ 
+
+
+if _name_ == '_main_':
+parser = argparse.ArgumentParser()
+parser.add_argument('--weights', nargs='+', type=str, default='yolov7.pt', help='model.pt path(s)')
+parser.add_argument('--source', type=str, default='inference/images', help='source') # file/folder, 0 for webcam
+parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
+parser.add_argument('--conf-thres', type=float, default=0.25, help='object confidence threshold')
+parser.add_argument('--iou-thres', type=float, default=0.45, help='IOU threshold for NMS')
+parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
+parser.add_argument('--view-img', action='store_true', help='display results') parser.add_argument('--save-txt', action='store_true', help='save results to *.txt')
+parser.add_argument('--save-conf', action='store_true', help='save confidences in -- save-txt labels')
+parser.add_argument('--nosave', action='store_true', help='do not save images/videos')
+parser.add_argument('--classes', nargs='+', type=int, help='filter by class: --class 0, or --class 0 2 3')
+parser.add_argument('--agnostic-nms', action='store_true', help='class-agnostic NMS')
+parser.add_argument('--augment', action='store_true', help='augmented inference') parser.add_argument('--update', action='store_true', help='update all models') parser.add_argument('--project', default='runs/detect', help='save results to
+project/name')
+parser.add_argument('--name', default='exp', help='save results to project/name') parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok,
+do not increment')
+parser.add_argument('--no-trace', action='store_true', help='don`t trace model') opt = parser.parse_args()
+ 
+
+
+print(opt) #check_requirements(exclude=('pycocotools', 'thop'))
+
+with torch.no_grad():
+if opt.update: # update all models (to fix SourceChangeWarning) for opt.weights in ['yolov7.pt']:
+detect() strip_optimizer(opt.weights)
+else:
+detect()
+
+
+
+5.	RESULTS
+
+1.	Dataset Statistics:
+-	The COCO dataset consists N number of images labeled with various objects, including obstacles.
+-	The obstacle classes in the dataset include vehicals, pedastrians , animal.
+
+
+2.	Model Training:
+-	The YOLOv7 model was trained using the COCO dataset and N number of images.
+
+
+3.	Example Obstacle Detection Results:
+-	Example 1:
+ 
+
+
+
+-	Image:
+
+
+
+
+-	Detected Obstacles:
+
+ 
+
+
+
+-	Confidence Scores: Train – 0.86
+Cow – 0.93
+
+
+-	Example 2:
+-	Image:
+
+-	Detected Obstacles:
+
+
+ 
+
+
+
+-	Confidence Scores:
+
+
+Car – 0.93
+Person – 0.86
+
+
+-	Example 3:
+-	Image:
+
+
+
+
+-	Detected Obstacles:
+
+ 
+
+
+
+-	Confidence Scores:
+
+
+Car – 0.91
+Person – 0.92
+Bicycle – 0.82
+
+
+5.	Comparison with Baseline:
+-	The performance of the YOLOv7 model was compared with a baseline model using the same dataset.
+-	The YOLOv7 model outperformed the baseline model in terms of accuracy and detection speed.
+
+6.	Limitations and Future Work:
+-	Despite achieving good results, the obstacle detection model has a few limitations:
+-	Difficulty in detecting small or partially occluded obstacles.
+-	Potential false positives or false negatives in complex scenes.
+-	To address these limitations, future work may include:
+-	Exploring advanced techniques like multi-scale training and ensembling for improved accuracy.
+ 
+
+
+6.CONCLUSION
+
+In this obstacle detection project, we utilized the popular COCO dataset and trained a YOLOv7 architechture is well-suited for object detection tasks due to its real-time Performance and high accuracy.
+
+By leveraging the COCO dataset, which contains a diverse range of object categories including obstacles, we were able to train the model to accurately identify and localize obstacles in images. The dataset provided a robust foundation for training the YOLOv7 model, enabling it to generalize well to real-world obstacle detection scenarios.
+
+Throughout the project, we followed a systematic approach that involved preprocessing the dataset, configuring the YOLOv7 model with appropriate hyperparameters, and training the model using the annotated COCO dataset. We employed techniques such as data augmentation, multi-scale training, and optimization strategies to enhance the model's performance and generalization capabilities.
+
+After training the YOLOv7 model, we evaluated its performance using various metrics such as precision, recall, and mean average precision (mAP). These metrics allowed us to assess the model's ability to accurately detect obstacles while minimizing false positives and false negatives. The achieved results demonstrated the effectiveness of the trained YOLOv7 model in obstacle detection tasks.
+
+The successful completion of this project highlights the potential of YOLOv7 and the COCO dataset for obstacle detection applications. The trained model can be deployed in real-time scenarios to detect obstacles, thereby enhancing the safety and efficiency of various systems such as autonomous vehicles, surveillance systems, and robotics.
+
+However, it's important to note that the performance of the obstacle detection model can be further improved by fine-tuning the hyperparameters, exploring advanced augmentation techniques, and incorporating additional annotated data specific to the target environment.
+
+Overall, this project showcases the capabilities of YOLOv7 and the COCO dataset in obstacle detection, providing a foundation for further research and development in this domain. The trained model can serve as a valuable tool in various applications where accurate and efficient obstacle detection is crucial.
+ 
+
+
+
+7.	REFERENCES
+
+[1]	Deqiang He, Zhiheng Zou, Yanjun Chen, Bin Liu, Xiaoyang Yao, Sheng Shan,“ Obstacle detection of rail transit based on deep learning ”, Measurement, Volume 176,2021.
+
+[2]	M. I. Thariq Hussan, D. Saidulu, P. T. Anitha, A. Manikandan and P. Naresh “Object Detection and Recognition in Real Time Using Deep Learning for Visually Impaired People”,2022.
+
+[3]	R P Sari, I P D Wibawa , and C Ekaputri , “Design and implementation of obstacles detection in self-driving car prototype ” in November 2019 Journal of Physics: Conference Series .
+
+[4]	XU Hongsheng, CHEN Tianyu, ZHANG Qipei, LU Jixiang, YANG Zhihong, “Obstacle Detection and Distance Measurement Method for Substation Patrol Robot ” in 2020 International Conference on Advanced Electrical and Energy Systems.
+
+[5]	Zhengjun Qiu ,Nan Zhao ,Lei Zhou ,Mengcen Wang ,Liangliang Yang ,Hui Fang, Yong He , Yufei Liu, “Vision-Based Moving Obstacle Detection and Tracking in Paddy Field Using Improved Yolov3 and Deep SORT ” in Sensors 2020
