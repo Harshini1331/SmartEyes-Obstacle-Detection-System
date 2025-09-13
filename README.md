@@ -41,7 +41,7 @@ The system employs a vision-based methodology using:
 
 The system successfully detects various obstacle classes including vehicles, pedestrians, animals, and other objects with high accuracy.
 
-#### Example 1: Train and Cow Detection
+#### Example 1: Traffic Scene Detection
 **Original Image:**
 ![Example 1 - Original Image](images/Example2_image.jpg)
 
@@ -49,8 +49,9 @@ The system successfully detects various obstacle classes including vehicles, ped
 ![Example 1 - Detected Obstacles](images/Example2_detectedobstacle.jpg)
 
 **Detected Objects:**
-- Train: 86% confidence
-- Cow: 93% confidence
+- Truck: 95% confidence
+- Car: 93% confidence
+- Person: 93% confidence
 
 #### Example 2: Urban Scene Detection
 **Original Image:**
